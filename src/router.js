@@ -1,12 +1,14 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+import HomePage from './pages/HomePage'
+
 
 const AppRouter = () => {
     
     return (
         <Routes>
-            <Route exact path="/" render={() => {<h1>Hello world</h1>}} />
+            <Route exact path="/" element={<HomePage />} />
         </Routes>
     )
 }
