@@ -5,6 +5,7 @@ import CategoryCard from "../components/home/CategoryCard"
 import CompanyFile from '../assets/mocks/company.json'
 import CategoriesFile from '../assets/mocks/categories.json'
 
+
 const defaultCompanyState = {
     "id": 11,
     "user_id": 19,
@@ -55,14 +56,17 @@ const HomePage = () => {
             <div className="text-center p-5">
                 <div>
                     <h1 className="font-bold text-2xl md:text-5xl">
-                        {company === {} ? "company-name": company.name}
+                        {company.name}
                     </h1>
                     <div className="flex justify-center items-center py-5">
                         {categories.map((category, key) => {
                             return (
-                                <div className="rounded-lg hover:bg-black hover:text-white px-3" key={key}>
+                                <button 
+                                    className="rounded-lg hover:bg-black hover:text-white px-3" 
+                                    key={key}
+                                >
                                     <div className="text-2xl md:text-4xl">{category.name}</div>
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
