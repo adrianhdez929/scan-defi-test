@@ -1,11 +1,9 @@
 import React from "react"
 
-import BannerIMG from '../assets/images/banner.jpeg'
-import LogoIMG from '../assets/images/icon.svg'
+import CategoryCard from "../components/home/CategoryCard"
 
 import CompanyFile from '../assets/mocks/company.json'
 import CategoriesFile from '../assets/mocks/categories.json'
-import CategoryCard from "../components/home/CategoryCard"
 
 const defaultCompanyState = {
     "id": 11,
@@ -48,9 +46,9 @@ const HomePage = () => {
     return (
         <>
             <div className="relative h-48 md:h-64 w-full mb-24 md:mb-40">
-                <img src={BannerIMG} alt="banner" className="h-48 md:h-64 w-full" />
+                <img src={require(`../assets${company.banner}`)} alt="banner" className="h-48 md:h-64 w-full" />
                 <div className="w-full flex justify-center absolute -bottom-1/3 md:-bottom-1/2">
-                    <img src={LogoIMG} alt="logo" className="w-1/3 md:w-1/6" />
+                    <img src={require(`../assets${company.logo}`)} alt="logo" className="w-1/3 md:w-1/6" />
                 </div>
             </div>
             
@@ -63,7 +61,7 @@ const HomePage = () => {
                         {categories.map((category, key) => {
                             return (
                                 <div className="rounded-lg hover:bg-black hover:text-white px-3" key={key}>
-                                    <span className="text-2xl md:text-4xl">{category.name}</span>
+                                    <div className="text-2xl md:text-4xl">{category.name}</div>
                                 </div>
                             )
                         })}
